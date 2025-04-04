@@ -1,0 +1,22 @@
+model Student {
+  id        Int          @id @default(autoincrement())
+  name      String
+  age       Int
+  email     String       @unique
+  enrollments Enrollment[]
+}
+
+model Course {
+  id          Int          @id @default(autoincrement())
+  title       String
+  description String
+  enrollments Enrollment[]
+}
+
+model Enrollment {
+  id         Int     @id @default(autoincrement())
+  student    Student @relation(fields: [studentId], references: [id])
+  studentId  Int
+  course     Course  @relation(fields: [courseId], references: [id])
+  courseId   Int
+}
