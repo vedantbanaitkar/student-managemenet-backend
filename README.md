@@ -1,4 +1,3 @@
-# student-managemenet-backend
 
 # 📚 Student Management Backend
 
